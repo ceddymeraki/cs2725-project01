@@ -1,5 +1,7 @@
+package cs2725.LinkedLists;
+
 /**
- * Class to pass as a generic object for the Doubly Linked 
+ * Class to pass as a generic object for the Doubly Linked
    List project.
  */
 public class Car implements OpenCloneable<Car>
@@ -17,7 +19,7 @@ public class Car implements OpenCloneable<Car>
         {
             return new Manufacturer(new String(this.brand));
         }
-        
+
         public boolean equals(Manufacturer x)
         {
             return this.brand.equals(x.brand);
@@ -32,14 +34,14 @@ public class Car implements OpenCloneable<Car>
         {
             this.brand = brand;
         }
-        
+
         public String toString()
         {
             return "{" + brand + "}";
         }
     }
 
-    private Manufacturer make; 
+    private Manufacturer make;
 
     public Car(Manufacturer make)
     {
@@ -55,7 +57,7 @@ public class Car implements OpenCloneable<Car>
     {
         return new Car(new Manufacturer(this.make.getBrand()));
     }
-	
+
 	public boolean equals(Object o) {
         if(o.getClass() == this.getClass()) {
             return this.equals((Car) o);
@@ -85,12 +87,10 @@ public class Car implements OpenCloneable<Car>
     {
         this.make = make;
     }
-    
+
     public String toString()
     {
         return make.toString();
     }
-    
+
 }
-
-

@@ -1,5 +1,7 @@
+package cs2725.LinkedLists;
+
 /**
- * This code should help in testing the clone and deep 
+ * This code should help in testing the clone and deep
  * clone methods of project 1.
  *
  * Author: Marcus Hill
@@ -15,7 +17,7 @@ public class CloneExample
     */
     public static class Car implements Cloneable
     {
-        private Manufacturer make; 
+        private Manufacturer make;
 
         public Car(Manufacturer make)
         {
@@ -31,7 +33,7 @@ public class CloneExample
         {
             return new Car(new Manufacturer(this.make.getBrand()));
         }
-        
+
         public boolean equals(Car x)
         {
             if(this.make.getBrand() == x.make.getBrand())
@@ -51,12 +53,12 @@ public class CloneExample
         {
             this.make = make;
         }
-        
+
         public String toString()
         {
             return make.toString();
         }
-        
+
     }
 
     public static class Manufacturer
@@ -72,7 +74,7 @@ public class CloneExample
         {
             return new Manufacturer(new String(this.brand));
         }
-        
+
         public boolean equals(Manufacturer x)
         {
             return this.brand.equals(x.brand);
@@ -87,7 +89,7 @@ public class CloneExample
         {
             this.brand = brand;
         }
-        
+
         public String toString()
         {
             return "{" + brand + "}";
@@ -96,8 +98,8 @@ public class CloneExample
 
     public static void main(String[] args)
     {
-        DLL<Car> list = new DLL<Car>();   
-        
+        DLL<Car> list = new DLL<Car>();
+
         //Example 1
         list.addLast(new Car("Honda"));
         list.addLast(new Car("Toyota"));
@@ -122,7 +124,7 @@ public class CloneExample
         list.addFirst(new Car("Kia"));
         list.addFirst(new Car("Volvo"));
 
-        System.out.println("\nExample 3: Added Ford, Kia, Volvo using addFirst."); 
+        System.out.println("\nExample 3: Added Ford, Kia, Volvo using addFirst.");
         System.out.println("Expected:\tnull <-- {Volvo} <--> {Kia} <--> {Ford}"
                            + " <--> {Honda} --> null");
         System.out.print("Your List:\t");
@@ -132,7 +134,7 @@ public class CloneExample
         DLL<Car> listCopy = list.clone();
         listCopy.first().setMake(new Manufacturer("Jeep"));
 
-        System.out.println("\nExample 4: Cloned the list and changed the" 
+        System.out.println("\nExample 4: Cloned the list and changed the"
                            + " Manufactuer of the first car in the copy list.");
         System.out.println("\t   The original list should also be changed.");
         System.out.println("\nExpected Original List:\t" + "null <-- {Jeep} <--> "
@@ -142,11 +144,11 @@ public class CloneExample
          //Example 5
         // This is a deep clone of the original list after
         // the first element was changed to Jeep.
-        DLL<Car> listDeepCopy = list.deepClone(); 
+        DLL<Car> listDeepCopy = list.deepClone();
         listDeepCopy.first().setMake(new Manufacturer("Audi"));
 
         System.out.println("\nExample 5: Deep Cloned the original list, then "
-                           + "changed the manufacturer of the first"); 
+                           + "changed the manufacturer of the first");
         System.out.println("\t   element of the deep copy list");
         System.out.println("\nExpected Original List:\t" + "null <-- {Jeep} "
                            + "<--> {Kia} <--> {Ford} <--> {Honda} --> null");
