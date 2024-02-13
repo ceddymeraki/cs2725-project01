@@ -1,3 +1,5 @@
+Anuj Shah and Akul Patel
+
 # cs2725-project01
 Project 1: Doubly Linked Lists
 
