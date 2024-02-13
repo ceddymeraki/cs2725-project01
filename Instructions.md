@@ -1,5 +1,8 @@
 # cs2725-project01
 Project 1: Doubly Linked Lists
+
+Import the class into the tester and check all cases for the methods written in DLL.java.
+
 Description:
 In this assignment, you will implement a doubly Linked List that manipulates generic types. Specifically, you will create a doubly Linked List class inside a file called DLL.java. A node class will be implemented as a nested class within the DLL class. The list will be implemented according to the class specifications below. You are not allowed to use ArrayLists or Linked Lists from the Java API library to implement any of the methods. Due to the generic nature of this project, your list is expected to work with various object types specified by the user.
 DLL.java Specifications:
